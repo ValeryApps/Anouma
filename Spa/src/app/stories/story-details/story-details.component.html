@@ -1,0 +1,128 @@
+<app-script
+  type="text/javascript"
+  src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
+>
+</app-script>
+<noscript>
+  <a href="https://yllix.com/publishers/337888" target="_blank">
+    <img
+      src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
+      style="border: none; margin: 0; padding: 0; vertical-align: baseline;"
+      alt="ylliX – Online Advertising Network"
+    />
+  </a>
+</noscript>
+
+<div class="">
+  <div class="col-md-12 col-sm-12">
+    <div class="mat-card my-5">
+      <div class="card-header">
+        <h1 id="title">{{ story?.title }}</h1>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img
+            [src]="story.imageUrl || '../../assets/AnoumaLogo1.png'"
+            alt=""
+            class="img-fluid"
+            id="img"
+          />
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="d-flex">
+          <strong class="badge badge-primary p-2 mr-2"
+            ><i class="fa fa-clock-o"></i>
+            {{ story?.datePosted | date }}</strong
+          >
+          <strong class="badge badge-primary p-2 mr-2">{{
+            story?.category
+          }}</strong>
+          <strong class="badge badge-success p-2">
+            <i class="fa fa-eye"></i> lu {{ story?.views }} fois</strong
+          >
+
+          <fb-like
+            class="btn btn-lg"
+            url="http://www.anouma.net/stories/{{ story.slug }}"
+          ></fb-like>
+        </div>
+
+        <hr />
+        <p class="lead font-weight-bold">{{ story.intro }}</p>
+        <div class="card my-4 box px-2">
+          <a href="http://www.ecowas24.com" target="blank">
+            <img
+              src="../../assets/bande.png"
+              alt=""
+              class="img-fluid local-image"
+            />
+          </a>
+        </div>
+
+        <app-script
+          type="text/javascript"
+          src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
+        >
+        </app-script>
+        <noscript>
+          <a href="https://yllix.com/publishers/337888" target="_blank">
+            <img
+              src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
+              style="
+                border: none;
+                margin: 0;
+                padding: 0;
+                vertical-align: baseline;
+              "
+              alt="ylliX – Online Advertising Network"
+            />
+          </a>
+        </noscript>
+
+        <div class="div"><input type="hidden" name="IL_IN_ARTICLE" /></div>
+        <div id="invisible" style="display: none;">{{ story.content }}</div>
+        <div id="visible">{{ story.content }}</div>
+        <hr />
+        <p class="font-weight-bolder">
+          <i class="fa fa-user"> </i> {{ story.author }}
+        </p>
+      </div>
+
+      <div
+        class="card-footer d-flex justify-content-end"
+        *appHasRoles="['AdminUser', 'Moderator']"
+      >
+        <button
+          class="btn btn-primary"
+          style="cursor: pointer;"
+          [routerLink]="['/create-story']"
+          routerLinkActive="$router_link-active$"
+          title="Add new Story"
+        >
+          <i class="fa fa-plus"></i>
+        </button>
+        <button
+          class="btn btn-primary mx-2"
+          [routerLink]="['/update-story/', story.slug]"
+          (click)="$event.stopPropagation()"
+          title="Edit this Story"
+        >
+          <i class="fa fa-pencil"></i>
+        </button>
+        <button
+          class="btn btn-primary"
+          [routerLink]="['/create-image/', story.slug]"
+          (click)="$event.stopPropagation()"
+          title="Change image"
+        >
+          <i class="fa fa-image"></i>
+        </button>
+      </div>
+      <fb-comments></fb-comments>
+    </div>
+  </div>
+</div>
+
+<app-script src="../../../assets/displayText.js" type="text/javascript">
+</app-script>

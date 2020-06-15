@@ -1,0 +1,42 @@
+<table class="table table-sm">
+  <tr>
+    <td style="width: 5%"><span  class="badge badge-primary" style="cursor:pointer;" [routerLink]="['/create-story']"
+              routerLinkActive="$router_link-active$" title="Add new Story"><i class="fa fa-plus"></i></span></td>
+    <td><span class="badge badge-primary">{{stories?.length}} stories published</span></td>
+  </tr>
+</table>
+
+
+
+<hr>
+<div class="container">
+  <table class="table-sm table-bordered">
+    <thead>
+    <tr>
+      <th style="width: 5%">Id</th>
+      <th style="width: 35%">Title</th>
+      <th style="width: 10%">Category</th>
+      <th style="width: 10%">Author</th>
+      <th style="width: 15%">Published</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let story of stories">
+      <td>{{story.id}}</td>
+      <td><a class="title" style="cursor: pointer" [routerLink]="['/stories', story.slug]" tooltip="{{story.title}}">{{story.title}}</a></td>
+      <td>{{story.category}}</td>
+      <td>{{story.author}}</td>
+      <td>{{story.datePosted | date}}</td>
+      <td><img src="{{story.imageUrl  || '../../assets/anouma.png'}}" alt="{{story.title}}" class="img-fluid"></td>
+      <td><a [routerLink]="['/update-story', story.slug]" class="btn btn-info btn-sm" tooltip="Edit this Story"><i class="fa fa-pencil"></i></a></td>
+      <td><a [routerLink]="['/create-image', story.id]" class="btn btn-info btn-sm" tooltip="upload image for this story"><i class="fa fa-image"></i></a></td>
+      <td>
+        <form >
+       <button class="btn btn-sm btn-danger" tooltip="Delete story" (click)="deleteStory(story.id)"><i class="fa fa-trash"></i></button>
+      </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

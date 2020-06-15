@@ -1,0 +1,9 @@
+﻿.git
+obj
+bin
+node_modules
+appsettings.json
+.vscode
+.idea
+.vs
+wwwroot

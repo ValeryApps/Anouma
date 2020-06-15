@@ -1,0 +1,134 @@
+<div class="pt-5">
+  <div class="card">
+    <a href="http://ecowas24.com" target="blank">
+      <img src="../../assets/e24.png" alt="" class="img-fluid local-image" />
+    </a>
+  </div>
+  <div class="card">
+    <fb-like class="p-2" url="http://anouma.net"></fb-like>
+  </div>
+  <!-- 
+  <div class="mat-card mb-5">
+    <div class="card-form">
+      <app-script
+        async
+        src="https://cse.google.com/cse.js?cx=013948261096672904324:dcism98fpie"
+      ></app-script>
+      <div class="gcse-search" enablehistory="false"></div>
+    </div>
+  </div> -->
+
+  <!--Videos-->
+  <div class="mat-card mb-5">
+    <div class="card-header bg-orangered">
+      <h2 class="card-title text-center text-white">
+        <i class="fa fa-tv"></i> Anouma TV
+      </h2>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let video of videos">
+        <div class="media">
+          <div class="media-img">
+            <img
+              [src]="video.thumbnailUrl || '../../assets/AnoumaLogo1.png'"
+              [alt]="video.title"
+              width="100"
+            />
+          </div>
+
+          <div class="media-body ml-2">
+            <a [routerLink]="['/videos/', video.id]">
+              <h6 class="title3">{{ video.title }}</h6>
+              <i class="fa fa-clock-o"> {{ video.datePosted | timeago }}</i>
+            </a>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+
+  <!--Entertainments-->
+  <div class="mat-card mb-5">
+    <div class="card-header bg-orangered">
+      <h2 class="card-title text-center text-white">
+        <i class="fa fa-soccer-ball-o"></i> Sports
+      </h2>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let story of sportsStories">
+        <a [routerLink]="['/stories/', story.slug]">
+          <div class="media">
+            <div class="media-img">
+              <img
+                [src]="story.imageUrl || '../../assets/AnoumaLogo1.png'"
+                [alt]="story.title"
+                width="80"
+              />
+            </div>
+            <div class="media-body ml-2">
+              <h6 class="title3">{{ story.title }}</h6>
+              <i class="fa fa-clock-o"> {{ story.datePosted | timeago }}</i>
+            </div>
+          </div>
+        </a>
+        <hr />
+      </div>
+    </div>
+  </div>
+
+  <div class="mat-card mb-5">
+    <div class="card-header bg-orangered">
+      <h2 class="card-title text-center text-white">
+        <i class="fa fa-music"></i> Culture
+      </h2>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let story of entertainmentStories">
+        <a [routerLink]="['/stories/', story.slug]">
+          <div class="media">
+            <div class="media-img">
+              <img
+                src="{{ story.imageUrl || '../../assets/AnoumaLogo1.png' }} "
+                alt="{{ story.title }}"
+                width="100"
+              />
+            </div>
+            <div class="media-body ml-2">
+              <h6 class="title3">{{ story.title }}</h6>
+              <i class="fa fa-clock-o"> {{ story.datePosted | timeago }}</i>
+            </div>
+          </div>
+        </a>
+        <hr />
+      </div>
+    </div>
+  </div>
+  <div class="mat-card mb-5">
+    <div class="card-header bg-orangered">
+      <h2 class="card-title text-center text-white">
+        <i class="fa fa-gears"></i> Technologies
+      </h2>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let story of techStories">
+        <a [routerLink]="['/stories/', story.slug]">
+          <div class="media">
+            <div class="media-img">
+              <img
+                src="{{ story.imageUrl || '../../assets/AnoumaLogo1.png' }} "
+                alt="{{ story.title }}"
+                width="100"
+              />
+            </div>
+            <div class="media-body ml-2">
+              <h6 class="title3">{{ story.title }}</h6>
+              <i class="fa fa-clock-o"> {{ story.datePosted | timeago }}</i>
+            </div>
+          </div>
+        </a>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>

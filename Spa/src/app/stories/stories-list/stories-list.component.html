@@ -1,0 +1,93 @@
+<app-script
+  type="text/javascript"
+  src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
+>
+</app-script>
+<noscript>
+  <a href="https://yllix.com/publishers/337888" target="_blank">
+    <img
+      src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
+      style="border: none; margin: 0; padding: 0; vertical-align: baseline;"
+      alt="ylliX – Online Advertising Network"
+    />
+  </a>
+</noscript>
+
+<carousel [noPause]="false" class="px-2">
+  <slide *ngFor="let story of storiesWithImage">
+    <img
+      [src]="story.imageUrl"
+      alt="First slide"
+      style="display: block; width: 100%;"
+    />
+    <div class="carousel-caption d-none d-md-block">
+      <div class="bg-dark p-2">
+        <a class="text-white" [routerLink]="['/stories', story.slug]">
+          <h3 class="title">{{ story.title }}</h3></a
+        >
+      </div>
+    </div>
+  </slide>
+</carousel>
+
+<app-script
+  type="text/javascript"
+  src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
+>
+</app-script>
+<noscript>
+  <a href="https://yllix.com/publishers/337888" target="_blank">
+    <img
+      src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
+      style="border: none; margin: 0; padding: 0; vertical-align: baseline;"
+      alt="ylliX – Online Advertising Network"
+    />
+  </a>
+</noscript>
+
+<hr style="border: 2px green solid;" />
+<div class="d-flex justify-content-center">
+  <h5 class="text-center bg-success p-2 text-white d-block">
+    Toute l'actualité d'aujourd'hui
+  </h5>
+</div>
+<div class="row">
+  <div class="d-flex flex-row flex-wrap">
+    <div class="col-md-6" *ngFor="let story of stories">
+      <app-story-card
+        [story]="story"
+        (removeStory)="deleteStory(story.id)"
+      ></app-story-card>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center mt-5 pt-5">
+  <pagination
+    [boundaryLinks]="true"
+    [totalItems]="pagination.totalItems"
+    [maxSize]="maxSize"
+    [itemsPerPage]="pagination.pageSize"
+    [(ngModel)]="pagination.currentPage"
+    (pageChanged)="onPageChanged($event)"
+    [rotate]="rotate"
+    previousText="&lsaquo;"
+    nextText="&rsaquo;"
+    firstText="&laquo;"
+    lastText="{{ totalPages }}"
+  >
+  </pagination>
+</div>
+<hr style="border: 2px green solid;" />
+<div class="d-flex justify-content-center">
+  <h3 class="text-center bg-success p-2 text-white d-block">
+    Nos articles les plus lus
+  </h3>
+</div>
+
+<div class="row">
+  <div class="d-flex flex-row flex-wrap">
+    <div *ngFor="let story of mostReadStories" class="col-md-3 col-sm-6">
+      <app-story-card2 [story]="story" class="shadow"></app-story-card2>
+    </div>
+  </div>
+</div>

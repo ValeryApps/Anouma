@@ -1,0 +1,35 @@
+<table class="table table-sm">
+  <tr>
+   <td><span class="badge badge-primary">{{users?.length}} Users</span></td>
+  </tr>
+</table>
+
+
+
+<hr>
+<div class="container">
+  <table class="table-sm table-bordered">
+    <thead>
+    <tr>
+      <th style="width: 5%">Id</th>
+      <th style="width: 30%">UserName</th>
+
+      <th style="width: 50%">User Roles</th>
+      <th style="width: 15%"></th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.userName}}</td>
+      <td>
+       <p *ngFor="let role of user.roles">  {{role}}</p>
+      </td>
+      <td><button class="btn btn-info" (click)="editRoleModal(user)">Edit Role</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

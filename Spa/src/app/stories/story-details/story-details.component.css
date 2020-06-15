@@ -1,0 +1,14 @@
+.badge {
+  height: 30px;
+  font-size: 12px;
+  font-style: italic;
+}
+.mat-card {
+  width: 100%;
+}
+.local-image {
+  transform: scale(1, 1);
+}
+.local-image:hover {
+  transform: scale(1, 1);
+}

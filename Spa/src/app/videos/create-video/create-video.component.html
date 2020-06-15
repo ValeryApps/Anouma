@@ -1,0 +1,173 @@
+<div class="row my-5">
+  <div class="col-md-12 mx-auto">
+    <form [formGroup]="videoFrom" (ngSubmit)="createVideo()">
+      <div class="card shadow border-dark">
+        <div class="card-header">
+          <h3 class="text-center">Add new Video</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid':
+                  videoFrom.get('title').errors &&
+                  videoFrom.get('title').touched
+              }"
+              formControlName="title"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                videoFrom.get('title').touched &&
+                videoFrom.get('title').hasError('required')
+              "
+            >
+              Title is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Intro</label>
+            <textarea
+              type="text"
+              formControlName="intro"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid':
+                  videoFrom.get('intro').errors &&
+                  videoFrom.get('intro').touched
+              }"
+              rows="5"
+            ></textarea>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                videoFrom.get('intro').touched &&
+                videoFrom.get('intro').hasError('required')
+              "
+            >
+              Intro is required
+            </div>
+          </div>
+
+          <div class="form-group d-flex justify-content-around">
+            <div class="form-inline">
+              <label>videoUrl</label>
+              <input
+                type="text"
+                formControlName="videoUrl"
+                class="form-control ml-2"
+                [ngClass]="{
+                  'is-invalid':
+                    videoFrom.get('videoUrl').errors &&
+                    videoFrom.get('videoUrl').touched
+                }"
+                rows="15"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  videoFrom.get('videoUrl').touched &&
+                  videoFrom.get('videoUrl').hasError('required')
+                "
+              >
+                Content is required
+              </div>
+            </div>
+
+            <div class="form-inline">
+              <label>Category</label>
+              <input
+                type="text"
+                formControlName="category"
+                class="form-control ml-2"
+                [ngClass]="{
+                  'is-invalid':
+                    videoFrom.get('category').errors &&
+                    videoFrom.get('category').touched
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  videoFrom.get('category').touched &&
+                  videoFrom.get('category').hasError('required')
+                "
+              >
+                Category is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group d-flex justify-content-around">
+          <div class="form-inline">
+            <label>Author</label>
+            <input
+              type="text"
+              formControlName="author"
+              class="form-control ml-2"
+              [ngClass]="{
+                'is-invalid':
+                  videoFrom.get('author').errors &&
+                  videoFrom.get('author').touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                videoFrom.get('author').touched &&
+                videoFrom.get('author').hasError('required')
+              "
+            >
+              Author is required
+            </div>
+          </div>
+          <div class="form-inline">
+            <label>Date</label>
+            <input
+              type="date"
+              formControlName="datePosted"
+              class="form-control ml-2"
+              [ngClass]="{
+                'is-invalid':
+                  videoFrom.get('datePosted').errors &&
+                  videoFrom.get('datePosted').touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                videoFrom.get('datePosted').touched &&
+                videoFrom.get('datePosted').hasError('required')
+              "
+            >
+              Date is required
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer text-white">
+          <div class="form-group d-flex justify-content-end">
+            <button
+              *ngIf="videoFrom.valid"
+              class="btn btn-outline-secondary mr-2"
+              type="submit"
+            >
+              <i class="fa fa-save"></i> Add Story
+            </button>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="cancel()"
+            >
+              <i class="fa fa-times-circle"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

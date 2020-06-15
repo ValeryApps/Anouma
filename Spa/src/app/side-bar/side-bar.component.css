@@ -1,0 +1,17 @@
+.mat-card {
+  padding: 0;
+}
+.bg-orangered {
+  background: orangered;
+}
+
+.bg-orangered:hover {
+  background: green;
+}
+.local-image {
+  transform: scale(1, 1);
+}
+
+.local-image:hover {
+  transform: scale(1, 1);
+}

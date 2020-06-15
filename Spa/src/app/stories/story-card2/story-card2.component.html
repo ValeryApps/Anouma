@@ -1,0 +1,18 @@
+<div class="mat-card mt-5 px-2">
+  <a
+    [routerLink]="['/stories/', story.slug]"
+    routerLinkActive="$router_link-active$"
+  >
+    <div class="card-img">
+      <img
+        src="{{ story.imageUrl || '../../assets/AnoumaLogo1.png' }} "
+        alt="{{ story.title }}"
+        class="img-fluid"
+      />
+    </div>
+    <div class="card-body">
+      <h6 tooltip="{{ story.title }}" class="title2">{{ story.title }}</h6>
+      <i class="fa fa-eye"> {{ story.views }}</i>
+    </div>
+  </a>
+</div>

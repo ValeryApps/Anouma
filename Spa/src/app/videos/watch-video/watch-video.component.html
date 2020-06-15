@@ -1,0 +1,19 @@
+<div class="my-5" >
+    <div class="card mx-auto">
+      <div class="card-header">  <h3> {{video.title}}</h3></div>
+      <div class="card-img">
+        <iframe width="790" height="420" [src]="video.videoUrl |safe "></iframe>
+      </div>
+      <div class="card-footer">
+        <strong class="badge badge-primary p-2 mr-2"><i class="fa fa-user"></i> {{video.author}}</strong>
+        <strong class="badge badge-primary p-2 mr-2"><i class="fa fa-clock-o"></i> {{video.datePosted | date}}</strong>
+        <strong class="badge badge-primary p-2 mr-2">{{video.category }}</strong>
+        <strong class="badge badge-success p-2"> <i class="fa fa-eye"></i> vu {{video.views}} fois</strong>
+        <fb-like class="btn btn-lg" url="http://ivoire.anouma.net/videos/{{video.id}}"></fb-like>
+      </div>
+      <div class="card-body">
+        {{video.intro}}
+      </div>
+     
+    </div>
+</div>

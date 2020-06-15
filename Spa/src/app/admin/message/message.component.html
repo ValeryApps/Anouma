@@ -1,0 +1,13 @@
+<div class="card my-5">
+<div class="card-header">
+  Sender: <span class="font-weight-bolder">{{msg.senderName}}</span>
+  <br>
+  Object: <span class="font-weight-bolder">{{msg.object}}</span>
+  <br>
+  Date Received: <span class="font-weight-bolder">{{msg.dateReceived | date}}</span>
+</div>
+
+  <div class="card-body">
+    {{msg.body}}
+  </div>
+</div>

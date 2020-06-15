@@ -1,0 +1,62 @@
+<div class="mat-card mt-5">
+  <a
+    [routerLink]="['/stories/', story.slug]"
+    routerLinkActive="$router_link-active$"
+  >
+    <div class="card-img">
+      <img
+        src="{{ story.imageUrl || '../../assets/AnoumaLogo1.png' }} "
+        alt="{{ story.title }}"
+        class="img-fluid"
+      />
+    </div>
+    <div class="card-body">
+      <h6 tooltip="{{ story.title }}" class="title2">{{ story.title }}</h6>
+      <i class="fa fa-clock-o"> {{ story.datePosted | date }}</i>
+      --
+      <strong>{{ story.category }}</strong>
+    </div>
+  </a>
+
+  <div
+    class="card-footer d-flex justify-content-end"
+    *appHasRoles="['AdminUser', 'Moderator']"
+  >
+    <button
+      class="btn btn-sm btn-primary"
+      style="cursor: pointer;"
+      [routerLink]="['/create-story']"
+      routerLinkActive="$router_link-active$"
+      tooltip="Add new Story"
+    >
+      <i class="fa fa-plus"></i>
+    </button>
+    <button
+      class="btn btn-sm btn-primary mx-2"
+      [routerLink]="['/update-story/', story.slug]"
+      (click)="$event.stopPropagation()"
+      tooltip="Edit this Story"
+    >
+      <i class="fa fa-pencil"></i>
+    </button>
+    <button
+      class="btn btn-sm btn-primary"
+      [routerLink]="['/create-image/', story.id]"
+      (click)="$event.stopPropagation()"
+      tooltip="upload image for this story"
+    >
+      <i class="fa fa-image"></i>
+    </button>
+    <form>
+      <button
+        class="btn btn-sm btn-danger ml-2"
+        tooltip="Delete story"
+        (click)="onStoryDelete(story.id)"
+      >
+        <i class="fa fa-trash"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+

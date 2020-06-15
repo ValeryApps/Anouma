@@ -1,0 +1,38 @@
+
+
+
+<table class="table table-sm">
+  <tr>
+    <td style="width: 5%"><span  class="badge badge-primary" style="cursor:pointer;" [routerLink]="['/create-video']"
+                                 routerLinkActive="$router_link-active$" title="Add new Story"><i class="fa fa-plus"></i></span></td>
+    <td><span class="badge badge-primary">{{videos?.length}} videos published</span></td>
+  </tr>
+</table>
+<hr>
+<div class="container">
+  <table class="table-sm">
+    <thead>
+    <tr>
+      <th style="width: 5%">Id</th>
+      <th style="width: 50%">Title</th>
+      <th style="width: 10%">Category</th>
+      <th style="width: 10%">Author</th>
+      <th style="width: 20%">Published</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let video of videos">
+      <td>{{video.id}}</td>
+      <td><a style="cursor: pointer" [routerLink]="['/videos', video.id]">{{video.title}}</a></td>
+      <td>{{video.category}}</td>
+      <td>{{video.author}}</td>
+      <td>{{video.datePosted | date}}</td>
+      <td><a class="btn btn-info btn-sm" [routerLink]="['/update-video', video.id]" tooltip="Edit this video"><i class="fa fa-pencil-square-o"></i></a></td>
+      <td><a class="btn btn-info btn-sm" [routerLink]="['/video-thumbnail', video.id]" tooltip="Add an image for this video"><i class="fa fa-photo"></i></a></td>
+      <td><button class="btn btn-danger btn-sm" (click)="deleteVideo(video.id)" tooltip="delete this video"><i class="fa fa-trash"></i></button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

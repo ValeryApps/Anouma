@@ -1,0 +1,72 @@
+<div class="p-4">
+  <div class="mx-auto card shadow-lg">
+
+  <div class="my-5">
+    <p class=" lead text-center font-weight-bolder text-info"> <i class="fa fa-5x fa-pencil-square-o"></i><br>
+      Pour toute information ou si vous v
+      oulez publier un article sur notre site, veuillez nous écrire.
+    </p>
+  </div>
+
+    <form [formGroup]="msgForm" (ngSubmit)="sendMessage()">
+      <div class="border-dark">
+        <div class=" my-2">
+          <h3 class="text-center text-success"><i class="fa fa-pencil-square-o"></i> Ecrivez-nous ici <i
+            class="fa fa-pencil-square-o"></i></h3>
+        </div>
+        <table class="table border shadow-lg">
+          <tr>
+            <td class="text-success font-weight-bolder"><i class="fa fa-user "></i> Name</td>
+            <td class="w-100"><input type="text" class="form-control"
+                                     [ngClass]="{'is-invalid': msgForm.get('senderName').errors && msgForm.get('senderName').touched}"
+                                     formControlName="senderName" placeholder="please enter your name"/>
+             </td>
+          </tr>
+          <tr>
+
+            <td class="text-success font-weight-bolder"><i class="fa fa-address-book-o"></i> Contact</td>
+            <td>
+              <input type="text" formControlName="senderContact" class="form-control"
+                     [ngClass]="{'is-invalid': msgForm.get('senderContact').errors && msgForm.get('senderContact').touched}"
+                     placeholder="please enter your contacts"/>
+
+            </td>
+          </tr>
+          <tr>
+
+            <td class="text-success font-weight-bolder"><i class="fa fa-hand-pointer-o"></i> Objects</td>
+            <td>
+              <input type="text" formControlName="object" class="form-control"
+                     [ngClass]="{'is-invalid': msgForm.get('object').errors && msgForm.get('object').touched}"/>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-success font-weight-bolder"><i class="fa fa-3x fa-file-text-o"></i> Body</td>
+            <td>
+            <textarea formControlName="body" class="form-control"
+                      [ngClass]="{'is-invalid': msgForm.get('body').errors && msgForm.get('body').touched}"
+                      rows="5"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+
+              <div class="form-group d-flex justify-content-end">
+                <button *ngIf="msgForm.valid" class="btn btn-outline-success mr-2" type="submit"><i
+                  class="fa fa-send-o"></i> Send
+                </button>
+                <button class="btn btn-outline-success" type="button" (click)="cancel()"><i
+                  class="fa fa-times-circle"></i> Cancel
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>
+
+

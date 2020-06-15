@@ -1,0 +1,31 @@
+<table class="table table-sm">
+  <tr>
+    <td style="width: 5%"><span  class="badge badge-primary" style="cursor:pointer;" [routerLink]="['/create-story']"
+                                 routerLinkActive="$router_link-active$" title="Add new Story"><i class="fa fa-plus"></i></span></td>
+    <td><span class="badge badge-primary">{{messages?.length}} messages received</span></td>
+  </tr>
+</table>
+<hr>
+<div class="container">
+  <table class="table-sm table-bordered">
+    <thead>
+    <tr>
+      <th style="width: 10%">Id</th>
+      <th style="width: 80%">Sender's name</th>
+      <th style="width: 10%">Data received</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let msg of messages">
+      <td>{{msg.id}}</td>
+      <td><a class="title" style="cursor: pointer" [routerLink]="['/messages', msg.id]"
+             tooltip="{{msg.object}}">{{msg.senderName}}</a></td>
+      <td>{{msg.dateReceived| date}}</td>
+       <td>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

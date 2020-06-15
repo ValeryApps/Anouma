@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACHCzLmxbc0GNoqywqEqhwAAAAAACAAAAAAAQZgAAAAEAACAAAADvXPo476zbN73AmaSCJwXGaXhwtRBnlnye+uNriXgQFgAAAAAOgAAAAAIAACAAAABc3K6pLssnm5DsvJEukaoweuKpSMdg6iXOByajjKWwmSAAAACyubHLmFzKDo2XkokyELhj48TZtrXiAySCOKPXo5F0aEAAAADUp9Hldi9jPmlutAMiWiYpyUczusPav+i0txsTSXNE0OYg1fj7pvoZCrsuHckcdJ4wCJUFtq5QXinHgF26iv17</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.site4now.net/ivoire</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="API.deps.json">
+      <publishTime>05/18/2020 11:29:30</publishTime>
+    </File>
+    <File Include="API.dll">
+      <publishTime>05/18/2020 11:29:15</publishTime>
+    </File>
+    <File Include="API.pdb">
+      <publishTime>05/18/2020 11:29:15</publishTime>
+    </File>
+    <File Include="API.runtimeconfig.json">
+      <publishTime>05/18/2020 11:29:30</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/08/2020 17:24:23</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/17/2020 13:12:44</publishTime>
+    </File>
+    <File Include="AutoMapper.dll">
+      <publishTime>08/12/2019 12:42:04</publishTime>
+    </File>
+    <File Include="AutoMapper.Extensions.Microsoft.DependencyInjection.dll">
+      <publishTime>08/12/2019 13:19:42</publishTime>
+    </File>
+    <File Include="CloudinaryDotNet.dll">
+      <publishTime>01/29/2020 04:18:00</publishTime>
+    </File>
+    <File Include="Data/Stories.json">
+      <publishTime>04/14/2020 08:09:04</publishTime>
+    </File>
+    <File Include="global.json">
+      <publishTime>02/18/2020 17:16:18</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>11/27/2018 18:07:34</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/18/2020 11:29:30</publishTime>
+    </File>
+    <File Include="wwwroot/3rdpartylicenses.txt">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+    <File Include="wwwroot/assets/151.gif">
+      <publishTime>04/23/2020 13:48:34</publishTime>
+    </File>
+    <File Include="wwwroot/assets/25.gif">
+      <publishTime>04/23/2020 13:46:11</publishTime>
+    </File>
+    <File Include="wwwroot/assets/Anouma Logo.jpg">
+      <publishTime>08/23/2019 18:24:39</publishTime>
+    </File>
+    <File Include="wwwroot/assets/anouma.png">
+      <publishTime>03/31/2020 07:16:55</publishTime>
+    </File>
+    <File Include="wwwroot/assets/AnoumaLogo1.png">
+      <publishTime>04/12/2020 14:22:27</publishTime>
+    </File>
+    <File Include="wwwroot/assets/App.js">
+      <publishTime>04/15/2020 20:13:05</publishTime>
+    </File>
+    <File Include="wwwroot/assets/displayText.js">
+      <publishTime>04/23/2020 15:25:22</publishTime>
+    </File>
+    <File Include="wwwroot/assets/favicon.ico">
+      <publishTime>03/31/2020 08:48:19</publishTime>
+    </File>
+    <File Include="wwwroot/assets/fb.js">
+      <publishTime>05/18/2020 11:14:34</publishTime>
+    </File>
+    <File Include="wwwroot/assets/i18n/en.json">
+      <publishTime>05/05/2020 13:23:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/i18n/fr.json">
+      <publishTime>05/05/2020 13:24:02</publishTime>
+    </File>
+    <File Include="wwwroot/assets/user.png">
+      <publishTime>02/10/2020 20:42:09</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>03/08/2020 16:49:41</publishTime>
+    </File>
+    <File Include="wwwroot/fontawesome-webfont.674f50d287a8c48dc19b.eot">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+    <File Include="wwwroot/fontawesome-webfont.912ec66d7572ff821749.svg">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+    <File Include="wwwroot/fontawesome-webfont.af7ae505a9eed503f8b8.woff2">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+    <File Include="wwwroot/fontawesome-webfont.b06871f281fee6b241d6.ttf">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+    <File Include="wwwroot/fontawesome-webfont.fee66e712a8a08eef580.woff">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+    <File Include="wwwroot/index.html">
+      <publishTime>05/18/2020 11:23:18</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.1cd349eb1e9dddfbeabf.js">
+      <publishTime>05/16/2020 23:22:59</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.41290648806946f07fed.js">
+      <publishTime>04/20/2020 20:51:49</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.57a5597d1007a82d039f.js">
+      <publishTime>04/24/2020 22:43:54</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.8b55f41ef4edf53f10fc.js">
+      <publishTime>05/03/2020 20:37:55</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.8bbf4330bfa1d7c74e45.js">
+      <publishTime>04/27/2020 22:57:39</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.c548875b6bb3b861287c.js">
+      <publishTime>04/23/2020 15:51:31</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.d5bccaddcaffc53987a7.js">
+      <publishTime>05/18/2020 11:23:16</publishTime>
+    </File>
+    <File Include="wwwroot/main-es2015.f20c2c0f39c0a3dee33f.js">
+      <publishTime>04/21/2020 11:48:26</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.1cd349eb1e9dddfbeabf.js">
+      <publishTime>05/16/2020 23:22:55</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.41290648806946f07fed.js">
+      <publishTime>04/20/2020 20:51:43</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.57a5597d1007a82d039f.js">
+      <publishTime>04/24/2020 22:43:48</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.8b55f41ef4edf53f10fc.js">
+      <publishTime>05/03/2020 20:37:48</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.8bbf4330bfa1d7c74e45.js">
+      <publishTime>04/27/2020 22:57:32</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.c548875b6bb3b861287c.js">
+      <publishTime>04/23/2020 15:51:26</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.d5bccaddcaffc53987a7.js">
+      <publishTime>05/18/2020 11:23:09</publishTime>
+    </File>
+    <File Include="wwwroot/main-es5.f20c2c0f39c0a3dee33f.js">
+      <publishTime>04/21/2020 11:48:20</publishTime>
+    </File>
+    <File Include="wwwroot/polyfills-es2015.442fa3cc45520cc0d518.js">
+      <publishTime>04/12/2020 18:35:11</publishTime>
+    </File>
+    <File Include="wwwroot/polyfills-es2015.ff7fa36232a4bdc88bfa.js">
+      <publishTime>04/03/2020 23:44:46</publishTime>
+    </File>
+    <File Include="wwwroot/polyfills-es5.a14d232d8433ada77639.js">
+      <publishTime>04/03/2020 23:45:06</publishTime>
+    </File>
+    <File Include="wwwroot/polyfills-es5.fd3af48698f9b02947d9.js">
+      <publishTime>04/12/2020 18:35:22</publishTime>
+    </File>
+    <File Include="wwwroot/runtime-es2015.0811dcefd377500b5b1a.js">
+      <publishTime>04/12/2020 18:35:11</publishTime>
+    </File>
+    <File Include="wwwroot/runtime-es2015.79d42b7a0c689735b1b5.js">
+      <publishTime>04/03/2020 23:44:45</publishTime>
+    </File>
+    <File Include="wwwroot/runtime-es5.0811dcefd377500b5b1a.js">
+      <publishTime>04/12/2020 18:35:11</publishTime>
+    </File>
+    <File Include="wwwroot/runtime-es5.79d42b7a0c689735b1b5.js">
+      <publishTime>04/03/2020 23:44:45</publishTime>
+    </File>
+    <File Include="wwwroot/scripts.c206e0464f21a8a7f8bf.js">
+      <publishTime>05/18/2020 11:21:41</publishTime>
+    </File>
+    <File Include="wwwroot/styles.969bc7cf4b475b34f42b.css">
+      <publishTime>04/21/2020 11:47:40</publishTime>
+    </File>
+    <File Include="wwwroot/styles.cdff90b9945838e9b23b.css">
+      <publishTime>05/18/2020 11:21:40</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

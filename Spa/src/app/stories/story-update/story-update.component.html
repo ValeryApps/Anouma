@@ -1,0 +1,82 @@
+<div class="row my-5">
+  <div class="col-md-12 mx-auto">
+    <form (ngSubmit)="updateStory()">
+      <div class="card shadow-lg border-dark">
+        <div class="card-header">
+          <h2 class="text-center">Edit this story</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label> Title </label>
+            <input
+              type="text"
+              name="title"
+              class="form-control"
+              [(ngModel)]="story.title"
+            />
+          </div>
+          <div class="form-group">
+            <label> Intro</label>
+            <textarea
+              rows="5"
+              name="intro"
+              class="form-control"
+              [(ngModel)]="story.intro"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label> Content </label>
+            <angular-editor
+              id="#editor"
+              rows="15"
+              name="content"
+              [(ngModel)]="story.content"
+            ></angular-editor>
+          </div>
+          <div class="form-group">
+            <label> Category </label>
+            <input
+              type="text"
+              name="category"
+              class="form-control"
+              [(ngModel)]="story.category"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Author</label>
+            <input
+              type="text"
+              name="author"
+              class="form-control"
+              [(ngModel)]="story.author"
+            />
+          </div>
+          <div class="form-group">
+            <label>Image Url</label>
+            <input
+              type="text"
+              name="imageUrl"
+              class="form-control"
+              [(ngModel)]="story.imageUrl"
+            />
+          </div>
+          <div class="card-footer text-white">
+            <div class="form-group d-flex justify-content-end">
+              <button class="btn btn-outline-secondary mr-2" type="submit">
+                <i class="fa fa-save"></i> Save Changes
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                (click)="cancel()"
+              >
+                <i class="fa fa-times-circle"></i> Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

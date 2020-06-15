@@ -1,0 +1,263 @@
+<div id="header" class="d-none d-md-block">
+  <div id="dark-cover">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 mx-auto text-white">
+          <!--          <p class="text-center">This website is under construction</p>-->
+          <div>
+            <h1 class="display-1 text-center font-weight-bold">
+              <img src="../../assets/anouma.png" width="100" alt="" />nouma.net
+            </h1>
+            <h6 class="display-4 text-center">La Vraie Info au Quotidien !</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-green bt mb-1 sticky-top box"
+>
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="../../assets/anouma.png" width="30" />
+      Anouma.net</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li
+          class="nav-item mr-2"
+          routerLinkActive="active px-2"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link" [routerLink]="['/']">Accueil </a>
+        </li>
+        <li
+          class="nav-item dropdown mr-2"
+          dropdown
+          routerLinkActive="active px-2"
+        >
+          <a
+            dropdownToggle
+            class="nav-link dropdown-toggle"
+            style="cursor: pointer;"
+            >Actualités
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a
+              class="dropdown-item"
+              [routerLink]="['/stories/category/politics']"
+              style="cursor: pointer;"
+            >
+              Politique</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/stories/category/sports']"
+              style="cursor: pointer;"
+            >
+              Sports</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/stories/category/economy']"
+              style="cursor: pointer;"
+            >
+              Economie</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/stories/category/entertainment']"
+              style="cursor: pointer;"
+            >
+              Culture</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/stories/category/health']"
+              style="cursor: pointer;"
+            >
+              Santé</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/stories/category/society']"
+              style="cursor: pointer;"
+            >
+              société</a
+            >
+          </div>
+        </li>
+        <li class="nav-item mr-2" routerLinkActive="active px-2">
+          <a class="nav-link" [routerLink]="['/stories/category/africa']"
+            >Afrique</a
+          >
+        </li>
+        <li class="nav-item mr-2" routerLinkActive="active px-2">
+          <a class="nav-link" [routerLink]="['/stories/category/world']"
+            >Monde</a
+          >
+        </li>
+
+        <li class="nav-item mr-2" routerLinkActive="active px-2">
+          <a class="nav-link" [routerLink]="['/videos']">Videos</a>
+        </li>
+
+        <li
+          class="nav-item mr-2"
+          routerLinkActive="active px-2"
+          *ngIf="!loginMode"
+        >
+          <a class="nav-link" [routerLink]="['/contact-us']">Nous contacter</a>
+        </li>
+        <li
+          class="nav-item mr-2"
+          routerLinkActive="active px-2"
+          *ngIf="!loginMode"
+        >
+          <a class="nav-link" [routerLink]="['/about-us']">Qui sommes-nous</a>
+        </li>
+        <li class="nav-item mr-2">
+          <form
+            *ngIf="loginMode"
+            class="form-inline"
+            #loginForm="ngForm"
+            (ngSubmit)="login()"
+          >
+            <input
+              type="text"
+              class="form-control mr-1"
+              name="userName"
+              required
+              [(ngModel)]="user.userName"
+              placeholder="UserName"
+            />
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              required
+              [(ngModel)]="user.password"
+              placeholder="Password"
+            />
+            <button
+              class="btn btn-success"
+              *ngIf="loginForm.valid"
+              type="submit"
+            >
+              OK
+            </button>
+          </form>
+        </li>
+        <li class="nav-item mr-2" *ngIf="!loginMode && !loggedIn()">
+          <a
+            class="nav-link"
+            (click)="activateLoginForm()"
+            style="cursor: pointer;"
+          >
+            <i class="fa fa-login"></i> Se connecter</a
+          >
+        </li>
+        <li class="nav-item mr-2" *ngIf="!loginMode && !loggedIn()">
+          <a
+            class="nav-link"
+            style="cursor: pointer;"
+            (click)="openModal(template)"
+            >S'abonner</a
+          >
+        </li>
+        <li class="nav-item mr-2" *ngIf="loggedIn()">
+          <a
+            tooltip="Logout"
+            class="nav-link border-white"
+            style="cursor: pointer;"
+            (click)="logout()"
+          >
+            Se deconncter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Deviens membre d'Anouma News</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="close"
+      (click)="modelRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!--  Registering modal-->
+  <div class="modal-body">
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">S'abonner</h2>
+          <div class="card body p-4">
+            <div class="form-group">
+              <label for="userName">Nom de l'utilisateur</label>
+              <input
+                type="text"
+                class="form-control"
+                id="userName"
+                name="userName"
+                [(ngModel)]="user.userName"
+                [required]="true"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe </label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="userName"
+                [(ngModel)]="user.password"
+                [required]="true"
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirmer mot de passe </label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                name="userName"
+                [(ngModel)]="user.confirmPassword"
+                [required]="true"
+              />
+            </div>
+            <div class="form-group">
+              <button
+                *ngIf="registerForm.valid"
+                class="btn btn-success btn-block"
+                type="submit"
+              >
+                <i class="fa fa-save"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

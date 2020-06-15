@@ -1,0 +1,24 @@
+
+
+<div class=""  *appHasRoles="['AdminUser', 'Moderator']" >
+ <h3>Admin Panel</h3>
+  <div class="tab-panel">
+    <tabset class="member-tabset">
+      <tab heading="Stories"  *appHasRoles="['AdminUser', 'Moderator']" >
+<app-stories-management></app-stories-management>
+      </tab>
+      <tab heading="Videos"  *appHasRoles="['AdminUser', 'Moderator']" >
+<app-videos-management></app-videos-management>
+      </tab>
+      <tab heading="Users"  *appHasRoles="['AdminUser', 'Moderator']" >
+        <app-user-management></app-user-management>
+      </tab>
+      <tab heading="Messages"  *appHasRoles="['AdminUser', 'Moderator']" >
+       <app-messages-management></app-messages-management>
+      </tab>
+      <tab heading="Images"  *appHasRoles="['AdminUser', 'Moderator']" >
+        <app-messages-management></app-messages-management>
+      </tab>
+    </tabset>
+  </div>
+</div>

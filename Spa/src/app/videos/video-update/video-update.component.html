@@ -1,0 +1,48 @@
+
+<div class="row my-5">
+  <div class="col-md-8 mx-auto">
+    <form (ngSubmit)="updateVideo()">
+      <div class="card shadow-lg border-dark">
+        <div class="card-header">
+          <h2 class="text-center">Edit this Video</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label> Title   </label>
+            <input type="text" name="title" class="form-control"  [(ngModel)]="video.title">
+
+          </div>
+          <div class="form-group">
+            <label> Intro</label>
+            <textarea rows="5" name="intro" class="form-control" [(ngModel)]="video.intro"></textarea>
+
+          </div>
+          <div class="form-group">
+            <label> Content </label>
+            <input type="text" name="videoUrl" class="form-control" [(ngModel)]="video.videoUrl"/>
+
+          </div>
+          <div class="form-group">
+            <label> Category </label>
+            <input type="text" name="category" class="form-control" [(ngModel)]="video.category">
+          </div>
+          <div class="form-group">
+            <label> ThumbnailUrl </label>
+            <input type="text" name="category" class="form-control" [(ngModel)]="video.thumbnailUrl">
+          </div>
+          <div class="form-group">
+            <label> Author </label>
+            <input type="text" name="author" class="form-control" [(ngModel)]="video.author">
+          </div>
+        </div>
+        <div class="card-footer bg-primary text-white">
+          <div class="form-group d-flex justify-content-end">
+            <button class="btn btn-outline-secondary mr-2" type="submit"><i class="fa fa-save"></i> Update video</button>
+            <button class="btn btn-outline-secondary" type="button" (click)="cancel()"><i class="fa fa-times-circle"></i> Cancel </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,177 @@
+<!-- 
+
+<div class="row" *ngIf="registerMode" style="display: block;">
+  <div class="col-md-12">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="mat-card shadow-lg border-dark">
+        <div class="card-header">
+          <h3 class="text-center text-primary">Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Username</label>
+            <input
+              type="text"
+              [ngClass]="{
+                'is-invalid':
+                  registerForm.get('username').errors &&
+                  registerForm.get('username').touched
+              }"
+              class="form-control"
+              formControlName="username"
+              placeholder="Username"
+            />
+            <div class="invalid-feedback">Please choose a username</div>
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              [ngClass]="{
+                'is-invalid':
+                  registerForm.get('password').errors &&
+                  registerForm.get('password').touched
+              }"
+              class="form-control"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                registerForm.get('password').hasError('required') &&
+                registerForm.get('password').touched
+              "
+            >
+              Password is required
+            </div>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                registerForm.get('password').hasError('minlength') &&
+                registerForm.get('password').touched
+              "
+            >
+              Password must be at least 4 characters
+            </div>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                registerForm.get('password').hasError('maxlength') &&
+                registerForm.get('password').touched
+              "
+            >
+              Password cannot exceed 8 characters
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input
+              [ngClass]="{
+                'is-invalid':
+                  (registerForm.get('confirmPassword').errors &&
+                    registerForm.get('confirmPassword').touched) ||
+                  (registerForm.get('confirmPassword').touched &&
+                    registerForm.hasError('mismatch'))
+              }"
+              type="password"
+              class="form-control"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                registerForm.get('confirmPassword').hasError('required') &&
+                registerForm.get('confirmPassword').touched
+              "
+            >
+              Confirm Password is required
+            </div>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                registerForm.hasError('mismatch') &&
+                registerForm.get('confirmPassword').touched
+              "
+            >
+              Passwords must match
+            </div>
+          </div>
+
+          <div class="form-group text-center">
+            <button
+              class="btn btn-success"
+              [disabled]="!registerForm.valid"
+              type="submit"
+            >
+              Register
+            </button>
+            <button class="btn btn-default" type="button" (click)="cancel()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="row" *ngIf="!registerMode">
+  <div class="col-md-12">
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+      <div class="card shadow-lg border-dark">
+        <div class="card-header">
+          <h2 class="text-center">Login</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>username</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              [(ngModel)]="user.username"
+              placeholder="Username"
+            />
+          </div>
+          <div class="form-group">
+            <label>username</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              [(ngModel)]="user.password"
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+          <div class="form-group">
+            <button class="btn btn-success" type="submit">
+              <i class="fa fa-sign-in"></i> login
+            </button>
+            <button
+              class="btn btn-secondary ml-2"
+              type="button"
+              (click)="cancel()"
+            >
+              <i class="fa fa-times-circle-o"></i> Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <a
+      href="#"
+      class="m-5 text-primary"
+      (click)="goToRegisterForm($event)"
+      type="button"
+    >
+      Or sing up here
+    </a>
+  </div>
+</div> -->
