@@ -16,6 +16,9 @@ storyForm:FormGroup;
   constructor(private storyService:StoryService, private route:ActivatedRoute,
               private formBuild:FormBuilder, private alertify:AlertifyService, private router:Router) { }
 
+  categories = ['Sports', 'Politique', 'Sécurité', 'Religion', 'Education',
+    'Economie', 'Santé', 'Tech', 'Medias', 'Culture', 'Société', 'Justice', 'Afrique', 'International'];
+
   ngOnInit(): void {
     this.route.data.subscribe(data=>{
       this.story = data['story'];

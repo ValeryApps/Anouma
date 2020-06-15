@@ -13,7 +13,8 @@ import {Router} from "@angular/router";
 export class CreateStoryComponent implements OnInit {
   baseUrl = environment.apiUrl;
  story:any = {};
-  categories = ['Sports', 'Politique', 'Economie', 'Santé', 'Tech', 'Culture', 'Société', 'Justice', 'Afrique', 'Monde'];
+  categories = ['Sports', 'Politique', 'Sécurité', 'Religion', 'Education',
+    'Economie', 'Santé', 'Tech', 'Medias', 'Culture', 'Société', 'Justice', 'Afrique', 'International'];
 storyForm:FormGroup;
   constructor(private formBuild:FormBuilder, private alertify:AlertifyService,
               private storyService:StoryService, private router:Router) { }

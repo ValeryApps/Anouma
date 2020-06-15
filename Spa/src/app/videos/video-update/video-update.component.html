@@ -1,6 +1,6 @@
 
 <div class="row my-5">
-  <div class="col-md-8 mx-auto">
+  <div class="col-md-12 mx-auto">
     <form (ngSubmit)="updateVideo()">
       <div class="card shadow-lg border-dark">
         <div class="card-header">
@@ -17,25 +17,32 @@
             <textarea rows="5" name="intro" class="form-control" [(ngModel)]="video.intro"></textarea>
 
           </div>
-          <div class="form-group">
-            <label> Content </label>
-            <input type="text" name="videoUrl" class="form-control" [(ngModel)]="video.videoUrl"/>
 
+
+            <div class="form-group">
+              <label> VideoUrl </label>
+              <input type="text" name="videoUrl" class="form-control" [(ngModel)]="video.videoUrl"/>
+
+            </div>
+          <div class="d-flex justify-content-around">
+            <div class="form-group">
+              <label> Category </label>
+              <select name="category" class="form-control" [(ngModel)]="video.category">
+                <option *ngFor="let category of categories" value="category">{{category}}</option>
+              </select>
+            </div>
+             <div class="form-group">
+              <label> ThumbnailUrl </label>
+              <input type="text" name="category" class="form-control" [(ngModel)]="video.thumbnailUrl">
+            </div>
+            <div class="form-group">
+              <label> Author </label>
+              <input type="text" name="author" class="form-control" [(ngModel)]="video.author">
+            </div>
           </div>
-          <div class="form-group">
-            <label> Category </label>
-            <input type="text" name="category" class="form-control" [(ngModel)]="video.category">
-          </div>
-          <div class="form-group">
-            <label> ThumbnailUrl </label>
-            <input type="text" name="category" class="form-control" [(ngModel)]="video.thumbnailUrl">
-          </div>
-          <div class="form-group">
-            <label> Author </label>
-            <input type="text" name="author" class="form-control" [(ngModel)]="video.author">
-          </div>
+
         </div>
-        <div class="card-footer bg-primary text-white">
+        <div class="card-footer text-white">
           <div class="form-group d-flex justify-content-end">
             <button class="btn btn-outline-secondary mr-2" type="submit"><i class="fa fa-save"></i> Update video</button>
             <button class="btn btn-outline-secondary" type="button" (click)="cancel()"><i class="fa fa-times-circle"></i> Cancel </button>

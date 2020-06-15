@@ -11,6 +11,7 @@ import {Video} from "../../_models/video";
 })
 export class VideoUpdateComponent implements OnInit {
 video:Video;
+  categories = ['Politique', 'Economy', 'Santé', 'Sécurité', 'Société', 'Showbiz'];
   constructor(private route:ActivatedRoute,
               private videoService:VideoService, private alertify:AlertifyService, private router:Router) { }
 

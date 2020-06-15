@@ -4,6 +4,7 @@ import {Video} from "../../_models/video";
 import {Pagination, PaginationResult} from "../../_models/pagination";
 import {VideoService} from "../../_services/video.service";
 import { TitleTagService } from 'src/app/_services/title-tag.service';
+import {AlertifyService} from "../../_services/alertify.service";
 
 @Component({
   selector: 'app-video-list',
@@ -13,7 +14,8 @@ import { TitleTagService } from 'src/app/_services/title-tag.service';
 export class VideoListComponent implements OnInit {
 videos:Video[];
 pagination:Pagination;
-  constructor(private route:ActivatedRoute, private titleTag:TitleTagService, private videoService:VideoService) {
+  constructor(private route:ActivatedRoute, private titleTag:TitleTagService
+              , private videoService:VideoService, private alertify:AlertifyService) {
 
 }
 
@@ -38,5 +40,16 @@ onPageChanged($event:any){
         this.videos = vid.result;
         this.pagination = vid.pagination;
       })
+  }
+
+  deleteVideo(id:number){
+   this.alertify.confirm("Are you sure you want to delete this video?", ()=>{
+     this.videoService.deleteVideo(id).subscribe(()=>{
+       this.videos.splice(this.videos.findIndex((x)=>x.id === id), 1);
+       this.alertify.success("video deleted successfully");
+     }, error => {
+       this.alertify.error("could not delete video");
+     });
+   });
   }
 }

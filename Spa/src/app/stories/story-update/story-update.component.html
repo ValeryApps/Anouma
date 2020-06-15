@@ -33,14 +33,12 @@
               [(ngModel)]="story.content"
             ></angular-editor>
           </div>
+
           <div class="form-group">
-            <label> Category </label>
-            <input
-              type="text"
-              name="category"
-              class="form-control"
-              [(ngModel)]="story.category"
-            />
+            <label>Category</label>
+            <select name="category" required [(ngModel)]="story.category" class="form-control">
+              <option *ngFor="let category of categories" [value]="category" >{{category}}</option>
+            </select>
           </div>
 
           <div class="form-group">

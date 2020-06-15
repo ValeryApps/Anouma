@@ -14,7 +14,7 @@ export class WorldComponent implements OnInit {
 
   stories:Story[];
   pagination:Pagination;
-  category:string = "Monde";
+  category:string = "International";
   rotate = false;
   maxSize = 15;
   constructor(private storyService:StoryService,private titleTag:TitleTagService, private route:ActivatedRoute) { }
@@ -26,9 +26,9 @@ export class WorldComponent implements OnInit {
    this.loadStories();
 
 
-   this.titleTag.setTitle('Monde - Anouma News');
+   this.titleTag.setTitle('International - Anouma News');
     this.titleTag.setSocialMediaTags(
-      'localhost:4200/category/', "Monde", "Monde page", null);
+      'localhost:4200/category/', "International", "International news on anouma", null);
   }
   loadStories(){
     this.storyService.getStories(this.pagination?.currentPage, this.pagination?.pageSize, this.category)

@@ -16,7 +16,6 @@
       <th style="width: 5%">Id</th>
       <th style="width: 35%">Title</th>
       <th style="width: 10%">Category</th>
-      <th style="width: 10%">Author</th>
       <th style="width: 15%">Published</th>
 
     </tr>
@@ -26,9 +25,8 @@
       <td>{{story.id}}</td>
       <td><a class="title" style="cursor: pointer" [routerLink]="['/stories', story.slug]" tooltip="{{story.title}}">{{story.title}}</a></td>
       <td>{{story.category}}</td>
-      <td>{{story.author}}</td>
       <td>{{story.datePosted | date}}</td>
-      <td><img src="{{story.imageUrl  || '../../assets/anouma.png'}}" alt="{{story.title}}" class="img-fluid"></td>
+      <td><img src="{{story.imageUrl  || '../../assets/anouma.png'}}" alt="" width="60px" height="50px"/></td>
       <td><a [routerLink]="['/update-story', story.slug]" class="btn btn-info btn-sm" tooltip="Edit this Story"><i class="fa fa-pencil"></i></a></td>
       <td><a [routerLink]="['/create-image', story.id]" class="btn btn-info btn-sm" tooltip="upload image for this story"><i class="fa fa-image"></i></a></td>
       <td>

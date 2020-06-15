@@ -12,6 +12,7 @@ import {AlertifyService} from "../../_services/alertify.service";
 export class CreateVideoComponent implements OnInit {
   videoFrom:FormGroup;
   video:any = {};
+  categories = ['Politique', 'Economy', 'Santé', 'Sécurité', 'Société', 'Showbiz'];
   constructor(private videoService:VideoService, private alertify:AlertifyService,
               private formBuilder:FormBuilder, private router :Router) { }
 

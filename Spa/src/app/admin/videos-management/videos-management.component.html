@@ -24,7 +24,7 @@
     <tbody>
     <tr *ngFor="let video of videos">
       <td>{{video.id}}</td>
-      <td><a style="cursor: pointer" [routerLink]="['/videos', video.id]">{{video.title}}</a></td>
+      <td><a class="title" style="cursor: pointer" [routerLink]="['/videos', video.id]">{{video.title}}</a></td>
       <td>{{video.category}}</td>
       <td>{{video.author}}</td>
       <td>{{video.datePosted | date}}</td>

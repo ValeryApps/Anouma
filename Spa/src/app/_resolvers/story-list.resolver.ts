@@ -9,7 +9,7 @@ import {AlertifyService} from "../_services/alertify.service";
 @Injectable()
 export class StoryListResolver implements Resolve<Story[]>{
   currentPage = 1;
-  pageSize = 10;
+  pageSize = 12;
   constructor(private storyService:StoryService, private router:Router, private alertify:AlertifyService) {  }
   resolve(route: ActivatedRouteSnapshot): Observable<Story[]> {
     return  this.storyService.getStories(this.currentPage, this.pageSize).pipe(

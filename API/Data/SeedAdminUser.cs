@@ -22,13 +22,13 @@ namespace API.Data
 
     public void SeedData()
     {
-      //if (!_context.Stories.Any())
-      //{
-      //  var storyData = File.ReadAllText("Data/stories.json");
-      //  List<Story> storiesList = JsonConvert.DeserializeObject<List<Story>>(storyData);
-      //  _context.Stories.AddRange(storiesList);
-      //  _context.SaveChanges();
-      //}
+      if (!_context.Stories.Any())
+      {
+        var storyData = File.ReadAllText("Data/stories.json");
+        List<Story> storiesList = JsonConvert.DeserializeObject<List<Story>>(storyData);
+        _context.Stories.AddRange(storiesList);
+        _context.SaveChanges();
+      }
       if (!_userManager.Users.Any())
       {
         var roles = new List<Role>

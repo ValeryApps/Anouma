@@ -79,16 +79,16 @@
 
             <div class="form-inline">
               <label>Category</label>
-              <input
-                type="text"
+              <select
                 formControlName="category"
                 class="form-control ml-2"
                 [ngClass]="{
                   'is-invalid':
                     videoFrom.get('category').errors &&
                     videoFrom.get('category').touched
-                }"
-              />
+                }">
+                <option *ngFor="let category of categories" value="category">{{category}}</option>
+              </select>
               <div
                 class="invalid-feedback"
                 *ngIf="
