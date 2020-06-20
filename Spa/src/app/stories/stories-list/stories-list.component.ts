@@ -5,6 +5,7 @@ import { Story } from "../../_models/story";
 import { Pagination, PaginationResult } from "../../_models/pagination";
 import { AlertifyService } from "../../_services/alertify.service";
 import { TitleTagService } from "src/app/_services/title-tag.service";
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: "app-stories-list",
@@ -23,10 +24,13 @@ export class StoriesListComponent implements OnInit {
     private route: ActivatedRoute,
     private storyService: StoryService,
     private alertify: AlertifyService,
-    private titleTag: TitleTagService
+    private titleTag: TitleTagService,
+    private ngxloader:NgxUiLoaderService
   ) {}
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
+    this.ngxloader.start();
     this.route.data.subscribe((data) => {
       this.stories = data["stories"].result;
       this.pagination = data["stories"].pagination;
@@ -37,6 +41,7 @@ export class StoriesListComponent implements OnInit {
           x.category !== "Monde"
       );
     });
+    
     this.totalPages = Math.ceil(
       this.pagination.totalItems / this.pagination.pageSize
     );
@@ -49,10 +54,14 @@ export class StoriesListComponent implements OnInit {
     );
 
     this.loadMostReadStories();
+    this.ngxloader.stop()
   }
+
   onPageChanged($event) {
     this.pagination.currentPage = $event.page;
+    this.ngxloader.start();
     this.loadStories();
+    this.ngxloader.stop();
   }
 
   loadStories() {

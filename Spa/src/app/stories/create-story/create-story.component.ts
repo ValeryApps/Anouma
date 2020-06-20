@@ -14,12 +14,13 @@ export class CreateStoryComponent implements OnInit {
   baseUrl = environment.apiUrl;
  story:any = {};
   categories = ['Sports', 'Politique', 'Sécurité', 'Religion', 'Education',
-    'Economie', 'Santé', 'Tech', 'Medias', 'Culture', 'Société', 'Justice', 'Afrique', 'International'];
+    'Economie', 'Santé', 'Tech', 'Medias', 'Culture', 'Société', 'Justice', 'Afrique', 'International', 'Insolite'];
 storyForm:FormGroup;
   constructor(private formBuild:FormBuilder, private alertify:AlertifyService,
               private storyService:StoryService, private router:Router) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
   }
 
  addStory(){

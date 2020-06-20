@@ -20,6 +20,7 @@ storyForm:FormGroup;
     'Economie', 'Santé', 'Tech', 'Medias', 'Culture', 'Société', 'Justice', 'Afrique', 'International'];
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
     this.route.data.subscribe(data=>{
       this.story = data['story'];
     })

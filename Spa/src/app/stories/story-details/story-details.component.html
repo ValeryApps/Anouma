@@ -1,19 +1,4 @@
-<app-script
-  type="text/javascript"
-  src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
->
-</app-script>
-<noscript>
-  <a href="https://yllix.com/publishers/337888" target="_blank">
-    <img
-      src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
-      style="border: none; margin: 0; padding: 0; vertical-align: baseline;"
-      alt="ylliX – Online Advertising Network"
-    />
-  </a>
-</noscript>
-
-<div class="">
+<div ngxUiLoaderBlurred>
   <div class="col-md-12 col-sm-12">
     <div class="mat-card my-5">
       <div class="card-header">
@@ -41,37 +26,10 @@
           <strong class="badge badge-success p-2">
             <i class="fa fa-eye"></i> lu {{ story?.views }} fois</strong
           >
-
-          <fb-like
-            class="btn btn-lg"
-            url="http://www.anouma.net/stories/{{ story.slug }}"
-          ></fb-like>
         </div>
 
         <hr />
         <p class="lead font-weight-bold">{{ story.intro }}</p>
-
-
-        <app-script
-          type="text/javascript"
-          src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
-        >
-        </app-script>
-        <noscript>
-          <a href="https://yllix.com/publishers/337888" target="_blank">
-            <img
-              src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
-              style="
-                border: none;
-                margin: 0;
-                padding: 0;
-                vertical-align: baseline;
-              "
-              alt="ylliX – Online Advertising Network"
-            />
-          </a>
-        </noscript>
-
         <div class="div"><input type="hidden" name="IL_IN_ARTICLE" /></div>
         <div id="invisible" style="display: none;">{{ story.content }}</div>
         <div id="visible">{{ story.content }}</div>
@@ -111,10 +69,10 @@
           <i class="fa fa-image"></i>
         </button>
       </div>
-      <fb-comments></fb-comments>
+     
     </div>
   </div>
 </div>
-
+<ngx-ui-loader></ngx-ui-loader>
 <app-script src="../../../assets/displayText.js" type="text/javascript">
 </app-script>

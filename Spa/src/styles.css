@@ -141,8 +141,6 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* .gif{
-  margin-top: 200px;
-} */
-/* html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+body{
+  background:rgb(235, 245, 250)
+}

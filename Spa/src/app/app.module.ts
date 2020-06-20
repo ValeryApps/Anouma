@@ -18,6 +18,7 @@ import { AngularEditorModule } from "@kolkov/angular-editor";
 import { MatCardModule } from "@angular/material/card";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -147,6 +148,7 @@ export function tokenGetter() {
       },
     }),
     AngularEditorModule,
+    NgxUiLoaderModule
   ],
   entryComponents: [AdminModalComponent],
 

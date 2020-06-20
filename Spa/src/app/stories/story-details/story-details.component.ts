@@ -3,6 +3,7 @@ import { Story } from "../../_models/story";
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 import { TitleTagService } from "src/app/_services/title-tag.service";
 import { StoryService } from "../../_services/story.service";
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: "app-story-details",
@@ -17,7 +18,8 @@ export class StoryDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private titleTag: TitleTagService,
     private router: Router,
-    private storyService: StoryService
+    private storyService: StoryService,
+    private ngxLoader:NgxUiLoaderService
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -31,6 +33,8 @@ export class StoryDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
+    this.ngxLoader.start();
     this.route.data.subscribe((data) => {
       this.story = data["story"];
     });
@@ -41,6 +45,7 @@ export class StoryDetailsComponent implements OnInit {
       this.story.title,
       this.story.imageUrl
     );
+    this.ngxLoader.stop()
   }
 
   ngOnDestroy() {

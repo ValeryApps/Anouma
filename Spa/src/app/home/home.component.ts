@@ -3,6 +3,7 @@ import {Story} from "../_models/story";
 import {StoryService} from "../_services/story.service";
 import {ActivatedRoute} from "@angular/router";
 import {Pagination} from "../_models/pagination";
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
 stories:Story[];
 loaded = false;
 pagination:Pagination;
-  constructor(private storyService:StoryService, private route:ActivatedRoute) { }
+  constructor(private storyService:StoryService, private route:ActivatedRoute, private ngxloader:NgxUiLoaderService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(data=>{

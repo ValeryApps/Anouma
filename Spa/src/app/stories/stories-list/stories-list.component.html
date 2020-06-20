@@ -1,18 +1,4 @@
-<app-script
-  type="text/javascript"
-  src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
->
-</app-script>
-<noscript>
-  <a href="https://yllix.com/publishers/337888" target="_blank">
-    <img
-      src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
-      style="border: none; margin: 0; padding: 0; vertical-align: baseline;"
-      alt="ylliX – Online Advertising Network"
-    />
-  </a>
-</noscript>
-
+<div ngxUiLoaderBlurred>
 <carousel [noPause]="false" class="px-2">
   <slide *ngFor="let story of storiesWithImage">
     <img
@@ -30,20 +16,6 @@
   </slide>
 </carousel>
 
-<app-script
-  type="text/javascript"
-  src="//uprimp.com/bnr.php?section=General&pub=337888&format=300x250&ga=g"
->
-</app-script>
-<noscript>
-  <a href="https://yllix.com/publishers/337888" target="_blank">
-    <img
-      src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
-      style="border: none; margin: 0; padding: 0; vertical-align: baseline;"
-      alt="ylliX – Online Advertising Network"
-    />
-  </a>
-</noscript>
 
 <hr style="border: 2px green solid;" />
 <div class="d-flex justify-content-center">
@@ -61,6 +33,7 @@
     </div>
   </div>
 </div>
+<ngx-ui-loader></ngx-ui-loader>
 <div class="d-flex justify-content-center mt-5 pt-5">
   <pagination
     [boundaryLinks]="true"
@@ -77,10 +50,11 @@
   >
   </pagination>
 </div>
+</div>
 <hr style="border: 2px green solid;" />
 <div class="d-flex justify-content-center">
   <h3 class="text-center bg-success p-2 text-white d-block">
-    Nos articles les plus lus
+    Articles les plus lus
   </h3>
 </div>
 

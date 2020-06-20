@@ -19,6 +19,7 @@ category:string = "Economie";
   constructor(private storyService:StoryService, private titleTag:TitleTagService, private route:ActivatedRoute) { }
 
     ngOnInit(): void {
+      window.scrollTo(0,0)
       this.route.data.subscribe(data=>{
       this.pagination = data['stories'].pagination;
     });

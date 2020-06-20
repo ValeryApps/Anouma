@@ -13,6 +13,7 @@ stories:Story[];
   constructor( private adminService:AdminService, private alertify:AlertifyService) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
   }
 
 }

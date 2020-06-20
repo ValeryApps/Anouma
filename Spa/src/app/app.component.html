@@ -29,17 +29,17 @@
       <div class="col-md-4 d-none d-lg-block">
         <ul class="navbar-nav">
           <li>
-            <a class="text-white" asp-action="Index" asp-controller="Home"
+            <a class="text-white" [routerLink]="['']"
               >Accueil</a
             >
           </li>
           <li>
-            <a class="text-white" asp-action="Politique" asp-controller="News"
+            <a class="text-white" [routerLink]="['/stories/category/politics']"
               >Politique</a
             >
           </li>
           <li>
-            <a class="text-white" asp-action="Economie" asp-controller="News"
+            <a class="text-white" [routerLink]="['/stories/category/economy']"
               >Economie</a
             >
           </li>
@@ -48,18 +48,18 @@
       <div class="col-md-4 d-none d-lg-block">
         <ul class="navbar-nav">
           <li>
-            <a class="text-white" asp-action="Culture" asp-controller="News"
+            <a class="text-white" [routerLink]="['/stories/category/entertainment']"
               >Culture</a
             >
           </li>
           <li>
-            <a class="text-white" asp-action="Technologie" asp-controller="News"
-              >Technologie</a
+            <a class="text-white" [routerLink]="['/stories/category/health']"
+              >Santé</a
             >
           </li>
           <li>
-            <a class="text-white" asp-action="Autre" asp-controller="News"
-              >Autres Info</a
+            <a class="text-white" [routerLink]="['/stories/category/society']"
+              >Société</a
             >
           </li>
         </ul>
@@ -67,18 +67,18 @@
       <div class="col-md-4 d-none d-lg-block">
         <ul class="navbar-nav">
           <li>
-            <a class="text-white" asp-action="Insolite" asp-controller="News"
-              >Insolite</a
-            >
+            <a class="text-white" [routerLink]="['/stories/category/sports']"
+            >Sports</a
+          >
           </li>
           <li>
-            <a class="text-white" asp-action="Afrique" asp-controller="News"
+            <a class="text-white" [routerLink]="['/stories/category/africa']"
               >Afrique</a
             >
           </li>
           <li>
-            <a class="text-white" asp-action="Monde" asp-controller="News"
-              >Monde</a
+            <a class="text-white" [routerLink]="['/stories/category/world']"
+              >International</a
             >
           </li>
         </ul>
